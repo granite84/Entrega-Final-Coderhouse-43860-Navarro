@@ -1,0 +1,51 @@
+{% extends 'Home/base.html' %}
+{% load static %}
+
+{% block BASE_CONTENIDO %}
+
+    <div class="row align-items-center my-5">
+        <h1 class="pb-lg-3 text-bg-light">
+            {% block INDEX_TITULO %}
+                Página de inicio
+            {% endblock INDEX_TITULO %}
+        </h1>
+    </div>
+
+    {% block INDEX_CONTENIDO %}
+
+    
+        {% if user.is_authenticated %}
+            {{ mensaje }}
+            <h3> Bienvenido {{ user.username }}</h3>
+        {% endif %}
+
+
+        <!-- Heading Row-->
+        <div class="row gx-4 gx-lg-5 align-items-center my-5">
+            <div class="col-lg-4"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'Home/img/logo.png' %}" alt="..." /></div>
+            <div class="col-lg-5">
+                <h1 class="font-weight-light"></h1>
+                <p>Nuestro objetivo principal es la rápida solución de sus problemas.
+                <p>Para ello contamos con un equipo de profesionales de primer nivel en cada rubro.</p>
+                <p>Contamos con una amplia gama de servicios para consorcios y edificios orientados al mantenimiento y reparación integral de los mismos.</p>
+                <a class="btn btn-primary" href="https://wa.me/5491124894471" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Content Row-->
+        <div class="row gx-4 gx-lg-5">
+
+            {% include 'Home/card.html' with card="Pintura"%}
+            {% include 'Home/card.html' with card="Albaliñeria"%}
+            {% include 'Home/card.html' with card="Herreria"%}
+            {% include 'Home/card.html' with card="Electricidad"%}
+            {% include 'Home/card.html' with card="Plomeria"%}
+            {% include 'Home/card.html' with card="Calefaccion"%}
+            {% include 'Home/card.html' with card="Humedad"%}
+            {% include 'Home/card.html' with card="Plomeria"%}
+            {% include 'Home/card.html' with card="Plomeria"%}
+
+        </div>
+    {% endblock INDEX_CONTENIDO %}
+
+{% endblock BASE_CONTENIDO %}
