@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Home',
     'cliente',
-<<<<<<< HEAD
     'servicio',
 =======
 >>>>>>> 7a03c1ecfc53cb433e13b2a44ff426a47b481712
