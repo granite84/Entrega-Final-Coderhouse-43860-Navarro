@@ -9,8 +9,8 @@ class Pais(models.Model):
 
 
 class Cliente(models.Model):
-    nombre_de_usuario = models.CharField(max_length=50)
-    contraseña = models.CharField(max_length=20)
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length= 50)
     nacimiento = models.DateField(null=True)
     pais_origen_id = models.ForeignKey(Pais, on_delete=models.SET_NULL, null=True, blank=True)
 
