@@ -3,7 +3,6 @@ from datetime import date
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
 
-
 from .forms import ClienteForm
 
 # Create your views here.

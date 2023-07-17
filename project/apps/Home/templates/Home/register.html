@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'Home/index.html' %}
 
 {% block INDEX_TITULO %}
@@ -15,3 +16,23 @@ Registro de usuario
     </form>
 
 {% endblock INDEX_CONTENIDO %}
+=======
+{% extends 'Home/base.html' %}
+
+{% block TITULO %}
+    Crear cliente
+{% endblock TITULO %}
+
+
+{% block CONTENIDO %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+
+    <a href="{% url 'Home:home' %}">Ir al menú principal</a>
+
+{% endblock CONTENIDO %}
+>>>>>>> 7a03c1ecfc53cb433e13b2a44ff426a47b481712
