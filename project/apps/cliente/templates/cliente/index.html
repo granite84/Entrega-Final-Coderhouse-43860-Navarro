@@ -6,14 +6,8 @@
 
 {% block INDEX_CONTENIDO %}
 
-<<<<<<< HEAD
     {% for cliente in cliente %}
         <h2>{{ cliente.nombre_de_usuario }}</h2>
-=======
-    {% for cliente in clientes %}
-        <h2>{{ cliente.nombre }}</h2>
-        <p>{{ cliente.apellido }}</p>
->>>>>>> 7a03c1ecfc53cb433e13b2a44ff426a47b481712
         <p>{{ cliente.nacimiento }}</p>
         <p>{{ cliente.pais_origen_id }}</p>
     {% endfor %}

@@ -45,8 +45,7 @@ INSTALLED_APPS = [
     'Home',
     'cliente',
     'servicio',
-=======
->>>>>>> 7a03c1ecfc53cb433e13b2a44ff426a47b481712
+
 ]
 
 MIDDLEWARE = [

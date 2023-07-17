@@ -9,22 +9,13 @@
                 {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link {% if request.path == "/cliente/" %} active  {% endif %}" href="{% url 'cliente:home' %}">Clientes</a></li>
                     <li class="nav-item"><a class="nav-link text-bg-info">{{ user.username }}</a></li>
-<<<<<<< HEAD
                     <li class="nav-item"><a class="nav-link {% if request.path == "/servicio/" %} active  {% endif %}" href="{% url 'servicio:home' %}">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:logout' %}">Logout</a></li>   
-
                 {% else %}
                     <li class="nav-item"><a class="nav-link {% if request.path == "/servicio/" %} active  {% endif %}" href="{% url 'servicio:home' %}">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link {% if request.path == "/about/" %} active  {% endif %}" href="{% url 'Home:about' %}">Sobre nosotros</a></li>
                     <li class="nav-item"><a class="nav-link text-info" href="{% url 'cliente:crear' %}">Registrarse</a></li>
                     <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:login' %}">Iniciar sesion</a></li>
-=======
-                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:logout' %}">Logout</a></li>
-                {% else %}
-                    <li class="nav-item"><a class="nav-link {% if request.path == "/about/" %} active  {% endif %}" href="{% url 'Home:about' %}">Sobre nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:register' %}">Crear cliente</a></li>
-                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:login' %}">Login</a></li>
->>>>>>> 7a03c1ecfc53cb433e13b2a44ff426a47b481712
                 {% endif %}
             </ul>
         </div>
