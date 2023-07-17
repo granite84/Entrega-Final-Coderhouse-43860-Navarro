@@ -1,12 +1,12 @@
 # Tercer-pre-entrega-Navarro
 
-## Sobre el autor
+## Soy Santiago Navarro
 
-## Descripción breve del proyecto
+## Este proyecto es un intento de servicio tecnico en linea
 
 ## La parte técnica del proyecto
 
-## Errores conocidos
+## No pude modificar el sql como para usar el usuario creado en el login
 
 ## Futuras mejoras
 
