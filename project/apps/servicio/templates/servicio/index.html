@@ -1,0 +1,18 @@
+{% extends 'Home/index.html' %}
+
+{% block INDEX_TITULO %} 
+    Detalles de servicios
+{% endblock INDEX_TITULO %}
+
+{% block INDEX_CONTENIDO %}
+    
+    <div class="d-grid gap-3 ">  
+        {% if user.is_staff %}
+            <a href="{% url 'servicio:serviciodetalle_create' %}" class="btn btn-primary ">Crear detalle de servicio</a>
+            <br>
+        {% endif %}
+        <a href="{% url 'servicio:serviciodetalle_list' %}" class="btn btn-primary ">Listar servicios</a>
+        <br>
+        <a href="{% url 'Home:home' %}">Ir al menú principal</a>
+    </div>
+{% endblock INDEX_CONTENIDO %}
