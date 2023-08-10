@@ -7,7 +7,7 @@
 ## El sitio cuenta con CRUD de servicios, clientes y profesionista
 ## Tambien cuenta con un sign in y sign up
 
-## No pude poner el avatar para cada uno de los modelos
+## No pude poner el avatar para cada uno de los modelos, si pude con los avatar static
 ## Tambien no pude hacer que las cards se hagan automaticamente cuando un servicio es creado
 ## Por todo lo demas creeria que no hay mas problemas, mas que esos
 ## Otro de los problemas es que no voy a poder contar con el video, lo intente muchas veces pero no me veo capaz. Verdaderamente lo siento
