@@ -1,12 +1,17 @@
-# Tercer-pre-entrega-Navarro
+# Entrega Final Coderhouse-43860
 
-## Soy Santiago Navarro
+## Soy Santiago Ezequiel Navarro
 
 ## Este proyecto es un intento de servicio tecnico en linea
 
-## La parte técnica del proyecto
+## El sitio cuenta con CRUD de servicios, clientes y profesionista
+## Tambien cuenta con un sign in y sign up
 
-## No pude modificar el sql como para usar el usuario creado en el login
+## No pude poner el avatar para cada uno de los modelos
+## Tambien no pude hacer que las cards se hagan automaticamente cuando un servicio es creado
+## Por todo lo demas creeria que no hay mas problemas, mas que esos
+## Otro de los problemas es que no voy a poder contar con el video, lo intente muchas veces pero no me veo capaz. Verdaderamente lo siento
 
-## Futuras mejoras
-
+## Muchisimas gracias a los tutores y al profesor por todo. Saludos!
+## Solamente cuenta con:
+## DJANGO Y PILLOW
