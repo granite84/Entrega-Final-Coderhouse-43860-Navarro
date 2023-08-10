@@ -23,11 +23,14 @@ def login_request(request):
         form = forms.CustomAuthenticationForm()
     return render(request, "Home/login.html", {"form": form})
 
-@staff_member_required
+
 def register(request):
     if request.method == "POST":
         form = forms.CustomUserCreationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data["username"]
             form.save()
-            return render(request, "Home/index.html", {"mensaje" : "Nuevo vendedor"})        
+            return render(request, "Home/index.html", {"mensaje": "Profesionista creado"})
+    else:
+        form = forms.CustomUserCreationForm()
+    return render(request, "Home/register.html", {"form": form})

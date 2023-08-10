@@ -1,7 +1,7 @@
 {% extends 'servicio/index.html' %}
 
 {% block INDEX_TITULO %} 
-    Eliminacion de detalle de servicio
+    Eliminacion de servicio
 {% endblock INDEX_TITULO %}
 
 {% block INDEX_CONTENIDO %}
@@ -13,5 +13,5 @@
         <button type="submit" class="btn btn-danger">Confirmar</button>
     </form>
 
-    <a href="{% url 'Home:home' %}">Ir al menú principal</a>
+    {% include 'Home/index_back.html' %}
 {% endblock INDEX_CONTENIDO %}

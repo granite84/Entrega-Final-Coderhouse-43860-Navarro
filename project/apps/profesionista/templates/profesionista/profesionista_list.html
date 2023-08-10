@@ -1,0 +1,32 @@
+{% extends 'profesionista/index.html' %}
+
+{% block INDEX_TITULO %} 
+    Lista de profesionales
+{% endblock INDEX_TITULO %}
+
+{% block INDEX_CONTENIDO %}
+    {% if object_list %}
+
+        {% for object in object_list %}
+            <ul>
+                <li>{{ object.nombre }}
+                    <a href="{% url 'profesionista:profesionista_detail' object.id %}"class ="btn btn-primary btn-sm">
+                        Ver más</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'profesionista:profesionista_update' object.id %}"class ="btn btn-secondary btn-sm">
+                        Actualizar</a>
+                    <a href="{% url 'profesionista:profesionista_delete' object.id %}"class ="btn btn-danger btn-sm">
+                        Eliminar</a>
+                    {% endif %}
+                </li>
+            </ul>
+        {% endfor %}        
+    {% else %}
+        <p>No hay elementos</p>
+
+    {% endif %}
+
+
+    {% include 'Home/index_back.html' %}
+{% endblock INDEX_CONTENIDO %}
+

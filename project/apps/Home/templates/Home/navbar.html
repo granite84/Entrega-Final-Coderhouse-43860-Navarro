@@ -1,24 +1,33 @@
+{% load static %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container px-5">
-        <a class="navbar-brand" href="#!">MCC SERVICIOS</a>
+        <a class="navbar-brand" href="{% url 'Home:home' %}">MCC SERVICIOS</a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link {% if request.path == "/" %} active {% endif %}" aria-current="page" href="{% url 'Home:home' %}">Inicio</a></li>
                 
                 {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link {% if request.path == "/profesionista/" %} active  {% endif %}" href="{% url 'profesionista:home' %}">Profesionales</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == "/cliente/" %} active  {% endif %}" href="{% url 'cliente:home' %}">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.path == "/servicio/" %} active  {% endif %}" href="{% url 'servicio:home' %}">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link text-bg-info">{{ user.username }}</a></li>
-                    <li class="nav-item"><a class="nav-link {% if request.path == "/servicio/" %} active  {% endif %}" href="{% url 'servicio:home' %}">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link {% if request.path == "/cliente/" %} active  {% endif %}" href="{% url 'cliente:home' %}">Clientes</a></li>
-                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:logout' %}">Logout</a></li>   
+                    {% if user.profesional.avatar.url %}
+                            <li class="nav-item"><img src="{{user.profesional.avatar.url}}" alt="avatar" class="" style="width: 30px;height: 30px;vertical-align: middle;margin-right: 2px; "></li>
+                        {% else %}
+                            <li class="nav-item"><img src="{% static 'profesionista/usuario.png' %}" alt=""class="" style="width: 30px;height: 30px;vertical-align: middle;margin-right: 2px; "></li>
+                    {% endif %}
+                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:logout' %}">Logout</a></li>
                 {% else %}
-                    <li class="nav-item"><a class="nav-link {% if request.path == "/cliente/" %} active  {% endif %}" href="{% url 'cliente:home' %}">Clientes</a></li>
-                    <li class="nav-item"><a class="nav-link {% if request.path == "/servicio/" %} active  {% endif %}" href="{% url 'servicio:home' %}">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link {% if request.path == "/about/" %} active  {% endif %}" href="{% url 'Home:about' %}">Sobre nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'cliente:crear' %}">Registrarse</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.path == "/profesionista/" %} active  {% endif %}" href="{% url 'profesionista:profesionista_list' %}">Profesionales</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.path == "/cliente/" %} active  {% endif %}" href="{% url 'cliente:cliente_list' %}">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.path == "/servicio/" %} active  {% endif %}" href="{% url 'servicio:servicios_list' %}">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.path == "/about/" %} active  {% endif %}" href="{% url 'Home:about' %}">Sobre mi</a></li>
+                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:register' %}">Registrarse</a></li>
                     <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:login' %}">Iniciar sesion</a></li>
                 {% endif %}
             </ul>
-        </div>
+        </div>  
     </div>
 </nav>

@@ -8,29 +8,27 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView, 
 
 from . import forms, models
 
-@login_required
+
 def index(request):
     return render(request, "servicio/index.html")
 
-class ServicioDetalleList(ListView):
-    model = models.ServicioDetalle
+class ServiciosList(ListView):
+    model = models.Servicios
     
-class ServicioDetalleCreate(CreateView):
-    model = models.ServicioDetalle
-    form_class = forms.ServicioForm
-    success_url = reverse_lazy("servicio:serviciodetalle_list")
+class ServiciosCreate(CreateView):
+    model = models.Servicios
+    form_class = forms.ServiciosForm
+    success_url = reverse_lazy("servicio:servicios_list")
     
-class ServicioDetalleDetail(DetailView):
-    model = models.ServicioDetalle
+class ServiciosDetail(DetailView):
+    model = models.Servicios
     
-class ServicioDetalleUpdate(UpdateView):
-    model = models.ServicioDetalle
-    form_class = forms.ServicioForm
-    success_url = reverse_lazy("servicio:serviciodetalle_list")
+class ServiciosUpdate(UpdateView):
+    model = models.Servicios
+    form_class = forms.ServiciosForm
+    success_url = reverse_lazy("servicio:servicios_list")
     
-class ServicioDetalleDelete(DeleteView):
-    model = models.ServicioDetalle
-    success_url = reverse_lazy("servicio:serviciodetalle_list")
-    
-    
+class ServiciosDelete(DeleteView):
+    model = models.Servicios
+    success_url = reverse_lazy("servicio:servicios_list")
     

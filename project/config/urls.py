@@ -22,4 +22,9 @@ urlpatterns = [
     path("", include("Home.urls")),
     path("cliente/", include("cliente.urls")),
     path("servicio/", include("servicio.urls")),
+    path("profesionista/", include("profesionista.urls")),
 ]
+from django.conf import settings
+from django.conf.urls.static import static
+if settings.DEBUG == True:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

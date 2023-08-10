@@ -1,0 +1,23 @@
+{% extends 'profesionista/index.html' %}
+{% load static %}
+{% block INDEX_TITULO %} 
+    Detalle de profesionales
+{% endblock INDEX_TITULO %}
+
+{% block INDEX_CONTENIDO %}
+    
+    <ul>
+        <li>Nombre: {{ object.nombre }} </li>
+        <li>Apellido: {{ object.apellido }} </li>
+        <li>Celular: {{ object.celular }} </li>
+        <li>Profesion: {{ object.profesion }} </li>
+        <li>Pais origen: {{ object.pais_origen_id }} </li>
+        {% if user.profesional.avatar.url %}
+            <li class="nav-item"><img src="{{user.profesional.avatar.url}}" alt="avatar" class="" style="height: 30px  "></li>
+        {% else %}
+            <li class="nav-item"><img src="{% static 'profesionista/usuario.png' %}" alt=""class="" style="width: 30px;height: 30px;vertical-align: middle;margin-right: 2px; "></li>
+        {% endif %} </li>
+    </ul>
+
+    {% include 'Home/index_back.html' %}
+{% endblock INDEX_CONTENIDO %}

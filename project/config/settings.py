@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'Home',
     'cliente',
     'servicio',
+    'profesionista',
 
 ]
 
@@ -134,3 +135,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = reverse_lazy("Home:login")
 
 LOGIN_REDIRECT_URL = reverse_lazy("Home:index")
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"

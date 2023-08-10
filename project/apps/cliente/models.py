@@ -13,6 +13,7 @@ class Cliente(models.Model):
     apellido = models.CharField(max_length= 50)
     nacimiento = models.DateField(null=True)
     pais_origen_id = models.ForeignKey(Pais, on_delete=models.SET_NULL, null=True, blank=True)
+    avatar = models.ImageField(upload_to="avatares",blank=True, null=True)
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}"
