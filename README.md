@@ -13,4 +13,5 @@
 ## Otro de los problemas es que no voy a poder contar con el video, lo intente muchas veces pero no me veo capaz. Verdaderamente lo siento
 
 ## Muchisimas gracias a los tutores y al profesor por todo. Saludos!
-
+## Solamente cuenta con:
+## DJANGO Y PILLOW
